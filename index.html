@@ -33,18 +33,6 @@ const mouse = {
 x: innerWidth / 2,
 y: innerHeight / 2
 };
-// event listeners
-	addEventListener('mousemove', event => {
-    mouse.x = event.clientX
-    mouse.y = event.clientY
-	});
-
-	addEventListener('resize', () => {
-	    canvas.width = innerWidth
-	    canvas.height = innerHeight
-
-	    init()
-	});	
 
 // functions
 	let randomInt = (min, max) => Math.floor(Math.random() * (max - min + 1) + min); 
@@ -53,7 +41,6 @@ y: innerHeight / 2
 		let yDistance = y2 - y1;
 		return Math.sqrt(Math.pow(xDistance, 2) + Math.pow(yDistance, 2));
 	}
-	let randomObj = (obj) => Object.keys(obj)[Math.floor(Math.random() * Object.keys(obj).length)];
 	function shuffle(array) {
 	  var currentIndex = array.length, temporaryValue, randomIndex;
 
@@ -77,7 +64,6 @@ const gravity = -0.2;
 const friction = 0.2;
 const poppedFramesMax = 6;
 const waitingTime = 60;
-let hasClicked = true;
 //particles
 	function Particle(x, y, radius, color, orderToGo) {
 		this.x = x;
@@ -89,7 +75,6 @@ let hasClicked = true;
 		this.radius = radius;
 		this.color = color;
 		this.orderToGo = orderToGo;
-		this.opacity = 0;
 		this.popped = false;
 		this.poppedFrames = 0;
 		this.frameCount = 0;
