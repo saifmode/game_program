@@ -1,3 +1,6 @@
+// art design by game_program and Pastel Castle
+// code by Saif Mode
+
 // initialising canvas
 	let canvas = document.querySelector('canvas');
 	let c = canvas.getContext('2d');
